@@ -1,0 +1,222 @@
+$primary: #3490dc;
+$primary-hover: #2779bd;
+$danger: #ef4444;
+$danger-hover: #dc2626;
+$text-main: #1f2937;
+$text-muted: #6b7280;
+$border-color: #e5e7eb;
+$bg-color: #f3f4f6;
+
+/* Regra de Ouro para resolver o vazamento de tela */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $bg-color;
+    font-family: 'Inter', system-ui, -apple-system, Arial, sans-serif;
+    color: $text-main;
+    padding: 40px 20px;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #111827;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: $text-main;
+}
+
+/* ================= Formulários ================= */
+
+/* Layout Grid para colocar os inputs do projeto lado a lado */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+/* Layout Flex para o input e botão de tarefa ficarem na mesma linha */
+.form-inline {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input {
+        flex: 1; /* Faz o input ocupar o espaço que sobrar */
+        margin: 0; 
+    }
+}
+
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fff;
+    color: $text-main;
+
+    &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 3px rgba(52, 144, 220, 0.15);
+    }
+}
+
+/* ================= Cards e Layout ================= */
+.card {
+    background: white; 
+    border-radius: 12px; 
+    padding: 24px; 
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03); 
+    margin-bottom: 24px;
+    border: 1px solid #f9fafb;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.due-date {
+    display: block;
+    font-size: 13px;
+    color: $text-muted;
+    margin-top: 4px;
+}
+
+.project-desc {
+    color: $text-muted;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: $border-color;
+    margin: 20px 0;
+}
+
+/* ================= Botões ================= */
+.btn { 
+    padding: 10px 18px; 
+    border: none; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s;
+    width: max-content; /* Impede o botão de esticar ocupando 100% */
+}
+
+.btn-primary {
+    background: $primary; 
+    &:hover { background: $primary-hover; }
+}
+
+.btn-danger {
+    background: $danger; 
+    &:hover { background: $danger-hover; }
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid $border-color;
+    color: $text-main;
+    &:hover {
+        background: #f3f4f6;
+        border-color: #d1d5db;
+    }
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* ================= Tarefas ================= */
+.task-list {
+    list-style: none; 
+}
+
+.task-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    border: 1px solid $border-color; 
+    border-radius: 8px;
+    padding: 12px 16px; 
+    margin-bottom: 8px;
+    background: #fafafa;
+}
+
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    
+    form {
+        margin: 0; /* Remove margem padrão do form */
+    }
+}
+
+/* Badges para o status */
+.badge {
+    padding: 4px 8px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.badge-success {
+    background: #d1fae5;
+    color: #059669;
+}
+
+.validated{
+    border-left: 1px solid red;
+}
