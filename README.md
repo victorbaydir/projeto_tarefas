@@ -14,14 +14,68 @@ Antes de começar, você precisará ter instalado em sua máquina:
 * PHP e Composer
 * PostgreSQL
 
-## Como rodar o projeto localmente
+---
+
+## Como rodar o projeto com Docker (Recomendado)
+
+A forma mais rápida e segura de rodar a aplicação, garantindo total compatibilidade de ambiente (PHP 8.0+), é utilizando o Docker.
+
+### Pré-requisitos
+* **Docker** e **Docker Compose** instalados na sua máquina.
+
+### Passo a passo
+
+**1. Clone o repositório e acesse a pasta**
+```bash
+git clone [https://github.com/victorbaydir/projeto_tarefas.git](https://github.com/victorbaydir/projeto_tarefas.git)
+cd projeto_tarefas
+```
+
+**2. Crie o .ev**
+```bash
+cp .env.example .env
+```
+e configure as variáveis de ambiente
+```bash
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=nome_do_seu_banco
+DB_USERNAME=seu_usuario
+DB_PASSWORD=sua_senha
+```
+
+**3. Suba os containers**
+```bash
+docker-compose up -d --build
+```
+
+**4. Instale as dependências do Back-end**
+```bash
+docker-compose exec -e COMPOSER_PROCESS_TIMEOUT=2000 app composer install
+```
+
+**5. Prepare o Laravel e o Banco de Dados**
+```bash
+docker-compose exec app php artisan key:generate
+docker-compose exec app php artisan optimize:clear
+docker-compose exec app php artisan migrate
+```
+
+**6. Instale as dependências do Front-end e compile os assets**
+```bash
+docker-compose exec app npm install
+docker-compose exec app npm run dev
+```
+
+## Como rodar o projeto localmente (sem Docker)
 
 Siga o passo a passo abaixo no seu terminal para baixar e executar a aplicação na sua máquina:
 
 **1. Clone o repositório e acesse a pasta**
 ```bash
-git clone https://github.com/victorbaydir/projeto_tarefas.git
-cd NOME_DO_REPOSITORIO
+git clone [https://github.com/victorbaydir/projeto_tarefas.git](https://github.com/victorbaydir/projeto_tarefas.git)
+cd projeto_tarefas
 ```
 
 **2. Instale as dependências**
