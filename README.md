@@ -62,12 +62,6 @@ docker-compose exec app php artisan optimize:clear
 docker-compose exec app php artisan migrate
 ```
 
-**6. Instale as dependências do Front-end e compile os assets**
-```bash
-docker-compose exec app npm install
-docker-compose exec app npm run dev
-```
-
 ## Como rodar o projeto localmente (sem Docker)
 
 Siga o passo a passo abaixo no seu terminal para baixar e executar a aplicação na sua máquina:
