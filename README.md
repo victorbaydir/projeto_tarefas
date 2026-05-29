@@ -27,7 +27,7 @@ A forma mais rápida e segura de rodar a aplicação, garantindo total compatibi
 
 **1. Clone o repositório e acesse a pasta**
 ```bash
-git clone [https://github.com/victorbaydir/projeto_tarefas.git](https://github.com/victorbaydir/projeto_tarefas.git)
+git clone https://github.com/victorbaydir/projeto_tarefas.git
 cd projeto_tarefas
 ```
 
@@ -74,7 +74,7 @@ Siga o passo a passo abaixo no seu terminal para baixar e executar a aplicação
 
 **1. Clone o repositório e acesse a pasta**
 ```bash
-git clone [https://github.com/victorbaydir/projeto_tarefas.git](https://github.com/victorbaydir/projeto_tarefas.git)
+git clone https://github.com/victorbaydir/projeto_tarefas.git
 cd projeto_tarefas
 ```
 
