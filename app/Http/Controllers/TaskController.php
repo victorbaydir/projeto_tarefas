@@ -18,6 +18,10 @@ class TaskController extends Controller
         
         $project = Project::find($projectId);
 
+        if (!$project) {
+            return redirect()->route('projects.index')->with('error', 'Projeto não encontrado!');
+        }
+
         $project->tasks()->create([
             'description' => $request->description,
             'status' => 'pendente'
@@ -35,6 +39,10 @@ class TaskController extends Controller
         );
         
         $task = Task::find($taskId);
+
+        if (!$task) {
+            return redirect()->route('projects.edit')->with('error', 'Tarefa não encontrada!');
+        }
         
         $task->update(
             [
